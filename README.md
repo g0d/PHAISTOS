@@ -1,4 +1,4 @@
-# PHAISTOS
+# PHAISTOS (Ver. 1.2)
 PHAISTOS is a generalized data exchange framework and validation tool.
 
 With PHAISTOS you can create validation models (schemas) for any kind/type of information structured in JSON and then share/exchange any data using the predefined model. Once shared or received, both sides (providers & consumers), can validate the data and make sure they are aligned to the original schema as agreed.

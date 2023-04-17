@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>PHAISTOS :: Verification Test Example</title>
+        <script src="phaistos.js"></script>
+    </head>
+    <body>
+        <script>
+            var new_phaistos = new phaistos(),
+            test_definition_model = 
+            {
+                "arguments" :   [
+                                    {
+                                        "key"     :   { "name" : "type", "optional" : false },
+                                        "value"   :   {
+                                                            "type"     :   "string",
+                                                            "choices"  :   ["data", "request"]
+                                                      }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "url", "optional" : false },
+                                        "value"   :   { "type" : "string" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "data", "optional" : true },
+                                        "value"   :   { "type" : "*" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "element_id", "optional" : true },
+                                        "value"   :   { "type" : "string" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "method", "optional" : true },
+                                        "value"   :   {
+                                                            "type"     :   "string",
+                                                            "choices"  :   ["get", "post"]
+                                                      }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "ajax_mode", "optional" : true },
+                                        "value"   :   {
+                                                            "type"     :   "string",
+                                                            "choices"  :   ["asynchronous", "synchronous"]
+                                                      }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "content_fill_mode", "optional" : true },
+                                        "value"   :   {
+                                                            "type"     :   "string",
+                                                            "choices"  :   ["replace", "append"]
+                                                      }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "response_timeout", "optional" : true },
+                                        "value"   :   { "type" : "number" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "on_success", "optional" : true },
+                                        "value"   :   { "type" : "function" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "on_fail", "optional" : true },
+                                        "value"   :   { "type" : "function" }
+                                    },
+                                    {
+                                        "key"     :   { "name" : "on_timeout", "optional" : true },
+                                        "value"   :   { "type" : "function" }
+                                    }
+                                ]
+            },
+            test_config = 
+            {
+                "type"          :   "request",
+                "url"           :   "/",
+                "data"          :   "test data",
+                "ajax_mode"     :   "asynchronous",
+                "on_success"    :   function()
+                                    {
+                                        // Do stuff...
+                                    }
+            };
+
+            console.log(new_phaistos.verify(test_definition_model, test_config));
+        </script>
+    </body>
+</html>
