@@ -8,6 +8,8 @@ PHAISTOS is also a good utility that can be used in parallel with [FIWARE](https
 
 The core and libraries of PHAISTOS are part of the [micro-MVC](https://github.com/g0d/micro-MVC) framework.
 
+For a minified version of the library, use this [link](https://cdn.jsdelivr.net/gh/g0d/PHAISTOS@main/phaistos.min.js).
+
 
 
 George Delaportas (G0D)  
