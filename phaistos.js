@@ -2,10 +2,10 @@
     PHAISTOS (Front-end for J.A.P with integrated subset of Vulcan & Sensei from micro-MVC)
 
     File name: phaistos.js (Version: 1.2)
-    Description: This file contains the PHAISTOS extension.
+    Description: This file contains the PHAISTOS library.
 
     Coded by George Delaportas (G0D)
-    Copyright (C) 2015 - 2023
+    Copyright (C) 2015 - 2024
     Open Software License (OSL 3.0)
 */
 
