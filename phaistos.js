@@ -1,7 +1,7 @@
 /*
     PHAISTOS (Front-end for J.A.P with integrated subset of Vulcan & Sensei from micro-MVC)
 
-    File name: phaistos.js (Version: 1.2)
+    File name: phaistos.js (Version: 1.3)
     Description: This file contains the PHAISTOS library.
 
     Coded by George Delaportas (G0D)
@@ -19,36 +19,9 @@ function phaistos()
         {
             function alpha()
             {
-                var __self = this;
-
                 this.is_string = function(val)
                 {
-                    if (typeof val !== 'string')
-                        return false;
-
-                    return true;
-                };
-
-                this.is_symbol = function(val)
-                {
-                    if (!__self.is_string(val))
-                        return false;
-
-                    if (val.match(/[!$%^&*()+\-|~=`{}\[\]:";'<>?,\/]/))
-                        return true;
-
-                    return false;
-                };
-
-                this.is_blank = function(val)
-                {
-                    if (!__self.is_string(val))
-                        return false;
-
-                    if (!val.trim())
-                        return true;
-
-                    return false;
+                    return (typeof val === 'string');
                 };
             }
 
@@ -61,29 +34,12 @@ function phaistos()
                     if (self.validation.misc.is_array(val) && val.length === 0)
                         return false;
 
-                    if (!isNaN(val - parseFloat(val)))
-                        return true;
-
-                    return false;
+                    return (!isNaN(val - parseFloat(val)));
                 };
 
                 this.is_integer = function(val)
                 {
-                    if (__self.is_number(val) && (val % 1 === 0) && !self.misc.contains('.', val.toString()))
-                        return true;
-
-                    return false;
-                };
-
-                this.is_float = function(val)
-                {
-                    if (val === 0.0)
-                        return true;
-
-                    if (__self.is_number(val) && (val % 1 !== 0))
-                        return true;
-
-                    return false;
+                    return (__self.is_number(val) && (val % 1 === 0) && !self.misc.contains('.', val.toString()))
                 };
             }
 
@@ -93,77 +49,37 @@ function phaistos()
 
                 this.is_undefined = function(val)
                 {
-                    if (val === undefined)
-                        return true;
-
-                    return false;
+                    return (val === undefined);
                 };
 
                 this.is_nothing = function(val)
                 {
-                    if (val === null || val === '')
-                        return true;
-
-                    return false;
+                    return (val === null || val === '');
                 };
 
                 this.is_bool = function(val)
                 {
-                    if (typeof val === 'boolean')
-                        return true;
-
-                    return false;
+                    return (typeof val === 'boolean');
                 };
 
                 this.is_array = function(val)
                 {
-                    if (Array.isArray(val))
-                        return true;
-
-                    return false;
-                };
-
-                this.is_function = function(val)
-                {
-                    if (typeof val === 'function')
-                        return true;
-
-                    return false;
+                    return (Array.isArray(val));
                 };
 
                 this.is_object = function(val)
                 {
-                    if (typeof val === 'object')
-                        return true;
-
-                    return false;
+                    return (typeof val === 'object');
                 };
 
                 this.is_invalid = function(val)
                 {
-                    if (__self.is_undefined(val) || __self.is_nothing(val))
-                        return true;
-
-                    return false;
+                    return (__self.is_undefined(val) || __self.is_nothing(val));
                 };
             }
 
             function utilities()
             {
-                this.is_email = function(val)
-                {
-                    var __pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-                    return __pattern.test(String(val).toLowerCase());
-                };
-
-                this.is_phone = function(val)
-                {
-                    var __pattern = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
-
-                    return __pattern.test(String(val).toLowerCase());
-                };
-
                 this.reg_exp = function(pattern, expression)
                 {
                     return pattern.test(String(expression)).toLowerCase();
@@ -178,37 +94,9 @@ function phaistos()
 
         function misc()
         {
-            var __self = this;
-
             this.contains = function(subject, list)
             {
-                if (list.indexOf(subject) === -1)
-                    return false;
-
-                return true;
-            };
-
-            this.sort = function(array, mode, by_property)
-            {
-                var __modes = ['asc', 'desc'],
-                    __order = null,
-                    __result = null;
-
-                if (!self.validation.misc.is_array(array) || !__self.contains(mode, __modes) || 
-                    (!self.validation.misc.is_invalid(by_property) && !self.validation.alpha.is_string(by_property)))
-                    return false;
-
-                if (mode === 'asc')
-                    __order = 1;
-                else
-                    __order = -1;
-
-                if (self.validation.misc.is_invalid(by_property))
-                    __result = array.sort(function(a, b) { return __order * (a - b); });
-                else
-                    __result = array.sort(function(a, b) { return __order * (a[by_property] - b[by_property]); });
-
-                return __result;
+                return (list.indexOf(subject) !== -1);
             };
         }
 
