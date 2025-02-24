@@ -5,7 +5,7 @@
     Description: This file contains the PHAISTOS library.
 
     Coded by George Delaportas (G0D)
-    Copyright (C) 2015 - 2024
+    Copyright (C) 2015 - 2025
     Open Software License (OSL 3.0)
 */
 
