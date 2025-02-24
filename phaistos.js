@@ -39,7 +39,7 @@ function phaistos()
 
                 this.is_integer = function(val)
                 {
-                    return (__self.is_number(val) && (val % 1 === 0) && !self.misc.contains('.', val.toString()))
+                    return (__self.is_number(val) && (val % 1 === 0) && !self.misc.contains('.', val.toString()));
                 };
             }
 
