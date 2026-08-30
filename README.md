@@ -15,4 +15,3 @@ For a minified version of the library, use this [link](https://cdn.jsdelivr.net/
 George Delaportas (G0D)  
 Copyright (C) 2015 - 2025 micro-MVC  
 Open Software License (OSL 3.0)  
-Supported by [PROBOTEK](https://probotek.eu/)  
